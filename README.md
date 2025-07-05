@@ -1,6 +1,6 @@
 # Crowd-Funding Console App
 
-A Python-based console application for managing crowd-funding campaigns, with user authentication and project management features, backed by PostgreSQL for data persistence.
+A Python-based console application for managing crowd-funding campaigns with user authentication and project management features, using JSON files for data persistence.
 
 ## Project Idea
 
@@ -35,20 +35,18 @@ Crowdfunding is the practice of funding a project or venture by raising small am
 - **Search Projects**:
   - Find projects active on a specific date
 
-### Database
-- **PostgreSQL Backend**:
-  - Proper relational database structure
-  - Tables for users and projects with relationships
-  - Data integrity through foreign keys
-- **Secure Data Handling**:
-  - Parameterized queries to prevent SQL injection
-  - Transaction management for data consistency
+### Data Storage
+- **JSON File Storage**:
+  - `users.json` for storing user data
+  - `projects.json` for storing project data
+  - Automatic creation of files on first run
+  - Simple and portable data format
 
 ## Technical Implementation
 
 - **Python 3** for application logic
-- **PostgreSQL** for data persistence
-- **psycopg2** library for database connectivity
+- **JSON files** for data persistence
+- **Standard library modules** (json, datetime, re, getpass)
 - **Command-line interface** with intuitive menus
 - **Input validation** for all user inputs
 - **Modular design** for easy maintenance
@@ -57,13 +55,8 @@ Crowdfunding is the practice of funding a project or venture by raising small am
 
 ### Prerequisites
 - Python 3.x installed
-- PostgreSQL server installed and running
-- psycopg2 package (`pip install psycopg2-binary`)
-
-### Configuration
-1. Create a PostgreSQL database named `crowdfunding`
-2. Update the `DB_CONFIG` dictionary in the code with your database credentials
-3. The application will automatically initialize the required tables on first run
 
 ### Running the Application
+1. Save the code to a file (e.g., `crowdfunding.py`)
+2. Run the application:
 python crowdfunding.py
